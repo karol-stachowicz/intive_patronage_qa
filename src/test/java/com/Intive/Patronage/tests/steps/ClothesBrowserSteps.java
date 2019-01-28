@@ -47,8 +47,15 @@ public class ClothesBrowserSteps extends DriverFactory {
         clothesBrowserPage.getSizeItem(size).click();
     }
 
+    @And("^I add \"([^\"]*)\" size$")
+    public void iAddSize(String size) throws InterruptedException {
+        Thread.sleep(5000);
+        clothesBrowserPage.getSizeItem(size).click();
+    }
+
     @And("^I add \"([^\"]*)\" color$")
-    public void iAddColor(String color) {
+    public void iAddColor(String color) throws InterruptedException {
+        Thread.sleep(5000);
         clothesBrowserPage.getColorItem(color).click();
     }
 }

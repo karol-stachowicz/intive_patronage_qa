@@ -124,7 +124,14 @@ Feature: As a user I want to be able to browse clothes catalog
     And I add "Yellow" color
     Then I can see "DRESSES > COLOR BLUE/YELLOW" page header
 
-  Scenario: test 21 - filter Dresses category by green and white color
+  Scenario: test 21 - filter Dresses category by S and M size
+    Given User is on automationpractice page
+    When I click "Dresses" button
+    And I select "S" size
+    And I add "M" size
+    Then I can see "DRESSES > SIZE S/M" page header
+
+  Scenario: test 22 - filter Dresses category by green and white color
     Given User is on automationpractice page
     When I click "Dresses" button
     And I select "Green" color
