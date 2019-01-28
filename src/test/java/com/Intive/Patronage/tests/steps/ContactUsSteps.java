@@ -18,7 +18,7 @@ public class ContactUsSteps extends DriverFactory {
     private ContactUsPage contactUsPage = new ContactUsPage(driver);
 
     @Given("^User is on automationpractice page$")
-    public void user_Is_On_AutomationPractise_Page()  {
+    private void user_Is_On_AutomationPractise_Page()  {
         contactUsPage.openAutomationPractisePage();
     }
 
