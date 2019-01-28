@@ -111,3 +111,35 @@ Feature: As a user I want to be able to send info to customer service
     And I select "Customer service" subject
     And I click send button
     Then I see success message: "Your message has been successfully sent to our team." text
+
+  Scenario: test 15 - try to send message without @ in email address
+    Given User is on automationpractice page
+    When I click contact us button
+    And I fill e-mail section with text "testwp.pl"
+    And I fill message section with text "To jest test"
+    And I fill order reference section with text "referencje zamówienia testowego"
+    And I upload file "test.jpg"
+    And I select "Customer service" subject
+    And I click send button
+    And There are following details: "Invalid email address."
+
+  Scenario: test 16 - try to send message to webmaster without @ in email address
+    Given User is on automationpractice page
+    When I click contact us button
+    And I fill e-mail section with text "testwp.pl"
+    And I fill message section with text "To jest test"
+    And I fill order reference section with text "referencje zamówienia testowego"
+    And I upload file "test.jpg"
+    And I select "Webmaster" subject
+    And I click send button
+    And There are following details: "Invalid email address."
+
+  Scenario: test 17 - try to send message without filling order reference section
+    Given User is on automationpractice page
+    When I click contact us button
+    And I fill e-mail section with text "test@wp.pl"
+    And I fill message section with text "To jest test"
+    And I upload file "test.jpg"
+    And I select "Webmaster" subject
+    And I click send button
+    And There are following details: "Your message has been successfully sent to our team."
