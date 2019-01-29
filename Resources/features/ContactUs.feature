@@ -121,7 +121,7 @@ Feature: As a user I want to be able to send info to customer service
     And I upload file "test.jpg"
     And I select "Customer service" subject
     And I click send button
-    And There are following details: "Invalid email address."
+    Then There are following details: "Invalid email address."
 
   Scenario: test 16 - try to send message to webmaster without @ in email address
     Given User is on automationpractice page
@@ -132,7 +132,7 @@ Feature: As a user I want to be able to send info to customer service
     And I upload file "test.jpg"
     And I select "Webmaster" subject
     And I click send button
-    And There are following details: "Invalid email address."
+    Then There are following details: "Invalid email address."
 
   Scenario: test 17 - try to send message without filling order reference section
     Given User is on automationpractice page
@@ -142,4 +142,4 @@ Feature: As a user I want to be able to send info to customer service
     And I upload file "test.jpg"
     And I select "Webmaster" subject
     And I click send button
-    And There are following details: "Your message has been successfully sent to our team."
+    Then I see success message: "Your message has been successfully sent to our team." text
