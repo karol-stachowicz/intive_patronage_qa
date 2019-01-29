@@ -107,14 +107,14 @@ Feature: As a user I want to be able to browse clothes catalog
     Given User is on automationpractice page
     When I click "T-Shirts" button
     And I select "Blue" color
-    And I select "M" size
+    And I add "M" size
     Then I can see "T-SHIRTS > SIZE M > COLOR BLUE" page header
 
   Scenario: test 19 - filter T-Shirt category by blue color and S size
     Given User is on automationpractice page
     When I click "T-Shirts" button
     And I select "Blue" color
-    And I select "S" size
+    And I add "S" size
     Then I can see "T-SHIRTS > SIZE S > COLOR BLUE" page header
 
   Scenario: test 20 - filter Dresses category by blue and yellow color
